@@ -1,0 +1,15 @@
+<li>
+  <h4>
+    <!-- 使用a标签绑定路由跳转 注意routeLink中的参数
+      （需要在对应的post-module.ts中导入RouterModule，本项目中之所以没有打入RouterModule，
+      而导入AppRoutingModule，是因为AppRouterModule中导入了RouterModule） -->
+    <a [routerLink]="['/posts', entity.id]" title="{{ entity.title }}">
+      绑定属性第一种方式
+    </a>
+    <a [title]="entity.title">绑定属性第二种方式</a>
+  </h4>
+  <p *ngIf="entity.body">{{ entity.body }}</p>
+  <p>
+    <button (click)="onClickRemoveFn(entity)">Remove</button>
+  </p>
+</li>
