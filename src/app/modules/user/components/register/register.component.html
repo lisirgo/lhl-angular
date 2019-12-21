@@ -1,0 +1,14 @@
+<form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label for="">
+    <p>username</p>
+    <input type="text" formControlName="username" />
+  </label>
+  <label for="">
+    <p>password</p>
+    <input type="text" formControlName="password" />
+  </label>
+  <p>
+    <button type="submit ">Submit</button>
+  </p>
+  <pre>Status:{{ this.registerForm.status }}</pre>
+</form>
