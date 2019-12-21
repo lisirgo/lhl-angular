@@ -1,0 +1,22 @@
+<header>
+  <h1>
+    <!-- 如果属性无值的情况下 就不要用[]，否者无法正常跳转 -->
+    <a routerLink="">{{ title }}</a>
+  </h1>
+  <nav>
+    <!-- 如果当前组件是活动状态的话，将绑定active这个类
+    routerLinkActiveOptions的意思是只有当前链接完全是posts，则当前链接才为活动状态-->
+    <a
+      routerLink="posts"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Posts</a
+    >
+    <!-- 注意与demo.component.html中对照一下 -->
+    <a [routerLink]="[{ outlets: { popup: ['message'] } }]">Message</a>
+    <a routerLink="demo" routerLinkActive="active">demo</a>
+  </nav>
+  <nav>
+    <a routerLink="register" routerLinkActive="active">Register</a>
+  </nav>
+</header>

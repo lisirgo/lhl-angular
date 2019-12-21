@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 // 导入表单
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [RegisterComponent],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, UserRoutingModule],
 })
 export class UserModule {}

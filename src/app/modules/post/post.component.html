@@ -1,5 +1,5 @@
-<h3>{{ title }}</h3>
-<ul>
+<h3 class="title">{{ title }}</h3>
+<div class="list">
   <!-- 父组件给子组件传递数据 通过@Input的方式(在子组件中引入)
       父组件监听子组件事件 通过@Output的方式(在子组件中引入)
   -->
@@ -7,5 +7,6 @@
     *ngFor="let entity of entities"
     [entity]="entity"
     (remove)="removeItem($event)"
+    [class.selected]="entity.id === selectedId"
   ></app-post-item>
-</ul>
+</div>

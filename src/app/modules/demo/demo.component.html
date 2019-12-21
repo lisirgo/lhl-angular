@@ -1,0 +1,14 @@
+<div class="demo">
+  <div class="sidebar">
+    <a routerLink="./child-routes" routerLinkActive="active">child routes</a>
+    <!-- 注意与header.component.html中对照一下
+    通过这种方式可以在子路由中打开message-->
+    <a [routerLink]="['/', { outlets: { popup: ['message'] } }]">
+      named message</a
+    >
+  </div>
+  <div class="content">
+    <!-- 一个模版里只有一个不带名字的router-outlet  -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

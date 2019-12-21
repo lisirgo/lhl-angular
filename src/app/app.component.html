@@ -1,5 +1,10 @@
-<h1>{{ title }}</h1>
+<app-header></app-header>
 <!-- 输出路由对应的组件内容 -->
-<router-outlet></router-outlet>
+<div class="container">
+  <!-- 一个模版里只有一个不带名字的router-outlet  -->
+  <router-outlet></router-outlet>
+</div>
 
+<!-- 应用的二级路由一般都会在有名字的router-outlet 中显示 -->
+<router-outlet name="popup"></router-outlet>
 <!-- <app-post></app-post> -->

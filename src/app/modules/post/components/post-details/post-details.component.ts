@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../models/post.model';
 import { PostService } from '../../services/post.service';
 
@@ -14,6 +14,7 @@ export class PostDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -24,5 +25,11 @@ export class PostDetailsComponent implements OnInit {
       this.entity = this.postService.show(postId);
       console.log(postId);
     });
+  }
+
+  gotoBack(entity: Post) {
+    // 注意navigate的值为数组 若只添加第一项参数，则默认跳转该路径
+    // 若后面添加接收的对象 对象中的参数可以用来做下一个页面的相关操作
+    this.router.navigate(['/posts', { id: entity.id }]);
   }
 }

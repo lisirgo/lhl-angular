@@ -1,0 +1,29 @@
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 18px;
+  padding: 4px 16px;
+}
+
+header {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+nav {
+  align-self: center;
+  padding: 8px 16px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+nav:nth-child(2) {
+  flex-grow: 2;
+}
+
+nav a.active {
+  color: #ef3a3a;
+}
